@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+    let year = prompt("рік народження?");
+    let city = prompt("ваше місто");
+    let sport = prompt("улюблений вид спорту");
+
+
+    if (year === null || city === null || sport === null) {
+    alert("Шкода, що Ви не захотіли ввести свій(ю) " +
+        (year === null ? "рік народження" : "") +
+        (year === null && city === null ? " та " : "") +
+        (city === null ? "місто" : "") +
+        ((year === null || city === null) && sport === null ? " та " : "") +
+        (sport === null ? "вид спорту" : "") + ".");
+    } else{
+    let message = "Ти живеш ";
+    if (city === "Київ" || city === "Вашингтон" || city === "Лондон") {
+        message += "у столиці " + getCountryCapital(city);
+    } else {
+        message += "у місті " + city;
+    }
+   
+
+    switch (sport.toLowerCase()) {
+        case "футбол":
+            message += "\nКруто! Хочеш стати футбольним чемпіоном, як Роналдо?";
+            break;
+        case "баскетбол":
+            message += "\nКруто! Хочеш стати баскетбольним чемпіоном, як Леброн Джеймс?";
+            break;
+        case "бокс":
+            message += "\nКруто! Хочеш стати боксерським чемпіоном, як Олександр Усик?";
+            break;
+        default:
+            message += "\nНевідомий вид спорту";
+    }
+
+    alert(
+        "рік народження: " + year + "\n" +
+        message + "\n" 
+       
+    );
+}
+
+    function getCountryCapital(city) {
+        switch (city) {
+            case "Київ":
+                return "України";
+            case "Вашингтон":
+                return "США";
+            case "Лондон":
+                return "Великої Британії";
+            default:
+                return "невідомої країни";
+        }
+    }
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
